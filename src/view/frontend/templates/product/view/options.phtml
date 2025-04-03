@@ -1,0 +1,28 @@
+<?php
+
+declare(strict_types=1);
+
+use Infrangible\CatalogProductOptionRelation\Block\Product\View\Options;
+use Magento\Framework\View\TemplateEngine\Php;
+
+/**
+ * @author      Andreas Knollmann
+ * @copyright   2014-2025 Softwareentwicklung Andreas Knollmann
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ */
+
+/** @var Php $this */
+/** @var Options $block */
+?>
+
+<?php if (count($block->getOptions())) :?>
+    <script type="text/x-magento-init">
+        {
+            "#product_addtocart_form": {
+                "priceOptionRelations": {
+                    "optionConfig": <?= /* @noEscape */ $block->getJsonConfig(); ?>
+                }
+            }
+        }
+    </script>
+<?php endif; ?>
