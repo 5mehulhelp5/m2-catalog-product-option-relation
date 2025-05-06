@@ -41,10 +41,8 @@ define([
             var changedOptionId = changedOption ? utils.findOptionId(changedOption[0]) : 0;
 
             var selectedOptions = this.getOptionValues();
-            console.log(selectedOptions);
 
             var options = $(this.options.optionsSelector, this.element);
-            console.log(options);
 
             options.each(function() {
                 var option = $(this);
